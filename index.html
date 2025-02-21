@@ -1,97 +1,206 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Gambar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #000; /* Background hitam */
-            color: #fff;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .header img {
-            width: 150px;
-            height: auto;
-            border-radius: 50%;
-        }
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .menu-item {
-            margin: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            background-color: #222;
-            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease; /* Animasi */
-        }
-        .menu-item:hover {
-            transform: scale(1.05);
-        }
-        .menu-item img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease; /* Animasi zoom */
-        }
-        .menu-item img:hover {
-            transform: scale(1.1); /* Zoom saat hover */
-        }
-        .menu-item h3 {
-            text-align: center;
-            padding: 10px;
-            font-size: 1.2em;
-            color: #fff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Modern Animated Login Form</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+    @import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #25252b;
+    }
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    @property --a {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    .box {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      background: repeating-conic-gradient(
+        from var(--a),
+        #ff2770 0%,
+        #ff2770 5%,
+        transparent 5%,
+        transparent 40%,
+        #ff2770 50%
+      );
+      filter: drop-shadow(0 15px 50px #000);
+      border-radius: 20px;
+      animation: rotating 4s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+
+    @keyframes rotating {
+      0% {
+        --a: 0deg;
+      }
+
+      100% {
+        --a: 360deg;
+      }
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-conic-gradient(
+        from var(--a),
+        #45f3ff 0%,
+        #45f3ff 5%,
+        transparent 5%,
+        transparent 40%,
+        #45f3ff 50%
+      );
+      filter: drop-shadow(0 15px 50px #000);
+      border-radius: 20px;
+      animation: rotating 4s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .box::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      background: #2d2d39;
+      border-radius: 15px;
+      border: 8px solid #25252b;
+    }
+
+    .box:hover {
+      width: 450px;
+      height: 500px;
+    }
+
+    .box:hover .login {
+      inset: 40px;
+    }
+
+    .box:hover .loginBx {
+      transform: translateY(0px);
+    }
+
+    .login {
+      position: absolute;
+      inset: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+      background: #00000033;
+      color: #fff;
+      z-index: 1000;
+      box-shadow: inset 0 10px 20px #00000080;
+      border-bottom: 2px solid #ffffff80;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+
+    .loginBx {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      width: 70%;
+      transform: translateY(126px);
+      transition: 0.5s;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+    }
+
+    h2 i {
+      color: #ff2770;
+      text-shadow: 0 0 5px #ff2770, 0 0 20px #ff2770;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      font-size: 1em;
+      color: #fff;
+      background: #0000001a;
+      border: 2px solid #fff;
+      border-radius: 30px;
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    input[type="submit"] {
+      background: #45f3ff;
+      border: none;
+      font-weight: 500;
+      color: #111;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    input[type="submit"]:hover {
+      box-shadow: 0 0 10px #45f3ff, 0 0 60px #45f3ff;
+    }
+
+    .group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .group a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .group a:nth-child(2) {
+      color: #ff2770;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-
-<div class="header">
-    <a href="https://i.ibb.co.com/WySzXBs/332177693-613390140632083-3662781378791567755-n.jpg">
-        <img src="https://i.ibb.co.com/WySzXBs/332177693-613390140632083-3662781378791567755-n.jpg" alt="Logo Gapyoung">
-    </a>
-</div>
-
-<div class="menu">
-    <div class="menu-item">
-        <h3>STANDARD PACKAGE</h3>
-        <img src="https://i.ibb.co.com/m5NHZh0/IMG-20241111-WA0036.jpg" alt="Gambar 1">
+  <div class="box">
+    <div class="login">
+      <div class="loginBx">
+        <h2>
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Login
+          <i class="fa-solid fa-heart"></i>
+        </h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Sign in" />
+        <div class="group">
+          <a href="#">Forgot Password</a>
+          <a href="#">Sign up</a>
+        </div>
+      </div>
     </div>
-    <div class="menu-item">
-        <h3>PREMIUM PACKAGE</h3>
-        <img src="https://i.ibb.co.com/DtLL6S5/IMG-20241111-WA0039.jpg" alt="Gambar 2">
-    </div>
-    <div class="menu-item">
-        <h3>MIDDLE PACKAGE</h3>
-        <img src="https://i.ibb.co.com/WPJg4Hy/IMG-20241111-WA0037.jpg" alt="Gambar 3">
-    </div>
-    <div class="menu-item">
-        <h3>SHABURI PACKAGE</h3>
-        <img src="https://i.ibb.co.com/r2NqY7S/IMG-20241111-WA0038.jpg" alt="Gambar 4">
-    </div>
-    <div class="menu-item">
-        <h3>SHABURI + GRILL</h3>
-        <img src="https://i.ibb.co.com/xDyFWyF/IMG-20241111-WA0042.jpg" alt="Gambar 5">
-    </div>
-    <div class="menu-item">
-        <h3>ALACARTE GRILL PACKAGE</h3>
-        <img src="https://i.ibb.co.com/g7Tfsjr/IMG-20241111-WA0041.jpg" alt="Gambar 6">
-    </div>
-    <div class="menu-item">
-        <h3>SHABURI ALACARTE PACKAGE</h3>
-        <img src="https://i.ibb.co.com/nMr3syW/IMG-20241111-WA0043.jpg" alt="Gambar 7">
-    </div>
-</div>
-
+  </div>
 </body>
 </html>
